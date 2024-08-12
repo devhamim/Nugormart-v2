@@ -129,9 +129,9 @@ class InventoryController extends Controller
         'sku' => 'required|string|max:255',
         'quantity' => 'required|array',
         'price' => 'required|array',
-        'weight' => 'array',
-        'color_id' => 'array',
-        'size_id' => 'array',
+        'weight' => 'nullable',
+        'color_id' => 'nullable',
+        'size_id' => 'nullable',
         'status' => 'required',
     ]);
 
