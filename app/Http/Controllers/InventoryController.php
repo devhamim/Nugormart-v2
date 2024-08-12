@@ -156,9 +156,9 @@ class InventoryController extends Controller
                 'quantity' => $value,
                 'price' => $request->price[$key],
                 'sell_price' => $request->sell_price[$key],
-                'weight' => $request->weight[$key],
-                'color_id' => $request->color_id[$key],
-                'size_id' => $request->size_id[$key],
+                'weight' => $request->weight[$key] ?? null,
+                'color_id' => $request->color_id[$key] ?? null,
+                'size_id' => $request->size_id[$key] ?? null,
             ]
         );
 
