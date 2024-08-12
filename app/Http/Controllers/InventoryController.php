@@ -129,9 +129,9 @@ class InventoryController extends Controller
         'sku' => 'required|string|max:255',
         'quantity' => 'required|array',
         'price' => 'required|array',
-        'weight' => 'nullable',
-        'color_id' => 'nullable',
-        'size_id' => 'nullable',
+        'color_id.*' => 'nullable',
+        'size_id.*' => 'nullable',
+        'weight.*' => 'nullable',
         'status' => 'required',
     ]);
 
@@ -159,9 +159,10 @@ class InventoryController extends Controller
                 'weight' => $request->weight[$key] ?? null,
                 'color_id' => $request->color_id[$key] ?? null,
                 'size_id' => $request->size_id[$key] ?? null,
+                'image' => $inventoryDetail->image ?? 'default_image.jpg',
             ]
         );
-
+    
         if (isset($request->image[$key])) {
             $image = $request->image[$key];
             $extension = $image->getClientOriginalExtension();
@@ -171,6 +172,8 @@ class InventoryController extends Controller
             $inventoryDetail->save();
         }
     }
+    
+    
 
     return redirect()->route('inventory.index')->with('success', 'Inventory updated successfully.');
 }
