@@ -174,6 +174,7 @@
                                 @endforeach
                             </div>
                         </div>
+
                         <ul class="navbar-nav ms-2">
                             <li class="nav-item">
                                 <a href="{{ url('/') }}" class="nav-link text-warning semi font-14">HOME</a>
@@ -191,11 +192,11 @@
         </div>
     </div>
 
-    {{-- <a href="https://api.whatsapp.com/send?phone=88{{$setting->first()->number_two}}&text=Hello%20there,%20I%20found%20you%20on%20website!%20i%20would%20like%20to%20talk%20about%20your%20Product." target="_blank" class="cart-dropdown-btn">
+    <a href="https://api.whatsapp.com/send?phone=88{{$setting->first()->number_two}}&text=Hello%20there,%20I%20found%20you%20on%20website!%20i%20would%20like%20to%20talk%20about%20your%20Product." target="_blank" class="cart-dropdown-btn">
         <div class="fixed-cart-whats">
             <img width="48" height="48" src="{{ asset('frontend/assets/image/sm_5b321c99945a2.png') }}" alt="whatsapp--v1" />
         </div>
-    </a> --}}
+    </a>
 
 </header>
 

@@ -81,7 +81,7 @@
             border-radius: 0 3px 3px 0;
         }
         
-    .burmanRadio {
+        .burmanRadio {
             margin-bottom: 10px;
         }
         .burmanRadio__input {
@@ -168,26 +168,26 @@
             }
         }
         
-    @media screen and (min-width: 320px) and (max-width: 767px) {
-        .btn_submit {
-            display: inline !important;
-        }
-    }
-    
-    .call_now button {
-        width: 100%;
-    }
-    
-    .call_now {
-        margin-top: 10px;
-    }
-    
-    @media (min-width: 992px) {
-        .img_section {
-                flex: 0 0 auto;
-                width: 46.666667% !important;
+        @media screen and (min-width: 320px) and (max-width: 767px) {
+            .btn_submit {
+                display: inline !important;
             }
-    }
+        }
+        
+        .call_now button {
+            width: 100%;
+        }
+        
+        .call_now {
+            margin-top: 10px;
+        }
+        
+        @media (min-width: 992px) {
+            .img_section {
+                    flex: 0 0 auto;
+                    width: 46.666667% !important;
+                }
+        }
 
         .ord_btn{
             font-size: 14px;
@@ -325,6 +325,13 @@
         .home_product_shadwo{
             border-radius: 10px;
             box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+        .title h3{
+            font-size: 14px;
+        }
+        .see_more{
+            margin-top: -7;
+            font-size: 14px;
         }
     </style>
 </head>

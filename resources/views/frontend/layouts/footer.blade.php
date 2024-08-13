@@ -200,7 +200,7 @@
                 @if($setting->first()->footer != null)
                         <small><span class="bold">{{ $setting->first()->footer }}</small>
                     @endif
-                     | Design and Development By <a class="text-primary" href="https://www.boguraweb.com/" target="_blank">Boguraweb</a>
+                     | Design and Development By <a class="text-primary" href="https://nugortechit.com/" target="_blank">Nugortech IT</a>
             </div>
             {{-- <div class="col-lg-3 col-md-3 col-sm-6 col-12 top_socials">
                 <div class="socials">

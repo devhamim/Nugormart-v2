@@ -264,7 +264,7 @@
                 <div class="products shopProducts mt-3">
                     <div class="products mt-3 row">
                         @foreach ($products as $product)
-                            <div class="product col-lg-2 product_radias mx-2">
+                            <div class="product col-lg-2 product_radias mx-2 home_product_shadwo my-3">
                                 <a href="{{route('product.details', $product->slug)}}">
                                     <div class="image">
                                         @if ($product->inventorie_id != null)
