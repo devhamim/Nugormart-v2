@@ -325,19 +325,12 @@
                                         @endif
                                     </div>
 
-                                    {{-- <div class="d-flex justify-content-between">
+                                    <div class="">
                                         <a class="submit_button btn btn-successs d-block cart_button"
-                                            href="{{route('product.details', $product->slug)}}" style="width: 49%;font-size: 13px;">
-                                            <div class="cart_btn bangali bold">কার্টে রাখুন</div>
-                                            <div><i class="fa fa-cart-shopping cart_icon"></i></div>
+                                            href="{{route('product.details', $related->slug)}}" style="width: 100%;font-size: 13px;">
+                                            <div class="cart_btn bangali bold text-white">Buy Now <i class="fa fa-cart-shopping cart_icon"></i></div>
                                         </a>
-                                        <a class="submit_button btn btn-warning d-block"
-                                            href="{{route('product.details', $product->slug)}}"
-                                            style="width: 49%;padding:0px;padding-top: 8px;font-size: 13px;">
-                                            <div class="cart_btn bangali bold ord_bt">অর্ডার করুন</div>
-                                            <div><i class="fa fa-cart-shopping"></i></div>
-                                        </a>
-                                    </div> --}}
+                                    </div>
 
                                 </div>
                             </div>
