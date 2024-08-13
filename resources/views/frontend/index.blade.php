@@ -13,9 +13,9 @@
                     @endforeach
                     
                 </ol> --}}
-                <div class="carousel-inner h-100" role="listbox">
+                <div class=" h-100 productautoplay" role="listbox">
                     @foreach ($banners as $banner)
-                        <div class="carousel-item active h-100" data-bs-interval="2000">
+                        <div class=" active h-100" data-bs-interval="2000">
                             <a href="{{ $banner->banner_link }}" target="_blank">
                                 <img src="{{asset('uploads/banner')}}/{{ $banner->image }}" class="w-100 d-block h-100" alt="{{ $banner->image }}" />
                             </a>
@@ -306,7 +306,7 @@
                                     <a href="{{ route('product.details', $product->slug) }}">
                                         <div class="title">{{ Str::limit($product->name, 25 , '') }}</div>
                                     </a>
-                                    <div class="price">
+                                    <div class="price my-2">
                                         @if ($product->inventorie_id != null && $product->rel_to_inventorie)
                                             @foreach ($product->rel_to_inventorie->rel_to_attribute->take(1) as $attribute)
                                                 @if ($attribute->sell_price != null)

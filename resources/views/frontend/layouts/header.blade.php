@@ -80,7 +80,7 @@
         .fa-bag-shopping:before,
         .fa-shopping-bag:before {
             content: "\f290";
-            color: #fe4e00;
+            color: #007cea;
         }
     </style>
     <div class="">
@@ -117,8 +117,8 @@
                     <div class="display_lg">
                         <div class="d-lg-flex d-none align-items-center gap-2 ps-lg-3">
                             @if($setting->first()->number_one != null)
-                                <a href="tel:{{ $setting->first()->number_one }}" class="font-22" style="font-size: 20px;color: #fe4e00">
-                                    <i class="fa fa-phone" style="color: #fe4e00;"></i>
+                                <a href="tel:{{ $setting->first()->number_one }}" class="font-22" style="font-size: 20px;color: #007cea">
+                                    <i class="fa fa-phone" style="color: #007cea;"></i>
                                     {{ $setting->first()->number_one }}
                                 </a>
                             @endif
