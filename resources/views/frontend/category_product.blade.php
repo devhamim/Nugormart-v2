@@ -324,7 +324,7 @@
 
                                     <div class="">
                                         <a class="submit_button btn btn-successs d-block cart_button"
-                                            href="{{route('product.details', $related->slug)}}" style="width: 100%;font-size: 13px;">
+                                            href="{{route('product.details', $product->slug)}}" style="width: 100%;font-size: 13px;">
                                             <div class="cart_btn bangali bold text-white">Buy Now <i class="fa fa-cart-shopping cart_icon"></i></div>
                                         </a>
                                     </div>
