@@ -297,7 +297,7 @@
                                         <div class="title">{{Str::limit($product->name, '25', '')}}</div>
                                     </a>
                                     
-                                    <div class="price">
+                                    <div class="price my-2">
                                         @if ($product->inventorie_id != null)
                                             @if ($product->rel_to_inventorie)
                                                 @php

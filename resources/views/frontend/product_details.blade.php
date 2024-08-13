@@ -266,7 +266,7 @@
                         <a href="{{route('product.details', $related->slug)}}">
                             <div class="title">{{Str::limit($related->name, '25', '')}}</div>
                         </a>
-                        <div class="price">
+                        <div class="price my-2">
                             @if ($related->inventorie_id != null)
                                 @if ($related->rel_to_inventorie)
                                     @php
