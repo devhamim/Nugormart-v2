@@ -59,7 +59,7 @@
                 <div class="text-left">
                     <div class="title ms-3"><h3>Shop By Category</h3></div>
                 </div>
-                <div class="right pe-lg-5 pe-3 gap-2 see_more">
+                <div class="right pe-3 gap-2 see_more">
                     <a href="{{ route('shop') }}" class="text-white ">See All</a>
                 </div>
             </div>
@@ -93,7 +93,7 @@
                 <div class="text-left">
                     <div class="title ms-3"><h3>Customer Review</h3></div>
                 </div>
-                {{-- <div class="right pe-lg-5 pe-3 gap-2 see_more">
+                {{-- <div class="rightpe-3 gap-2 see_more">
                     <a href="{{ route('shop') }}" class="text-white ">See All</a>
                 </div> --}}
             </div>
@@ -122,7 +122,7 @@
                 <div class="text-left">
                     <div class="title ms-3"><h3>New Arrival Products</h3></div>
                 </div>
-                <div class="right pe-lg-5 pe-3 gap-2 see_more">
+                <div class="right pe-3 gap-2 see_more">
                     <a href="{{ route('shop') }}" class="text-white ">See All</a>
                 </div>
             </div>
@@ -176,18 +176,15 @@
                                         @endif
                                     @endif
                                 </div>
-    
-                                {{-- <div class="d-flex justify-content-between">
-                                    <a class="submit_button btn btn-successs d-block cart_button"
-                                        href="{{route('product.details', $product->slug)}}" style="width: 100%;font-size: 13px;">
-                                        <div class="cart_btn bangali bold">Buy Now</div>
-                                        <div><i class="fa fa-cart-shopping cart_icon"></i></div>
-                                    </a>
-                                </div> --}}
-    
+
                             </div>
                         </div>
-                        
+                        <div class="">
+                            <a class="submit_button btn btn-successs d-block cart_button"
+                                href="{{route('product.details', $product->slug)}}" style="width: 100%;font-size: 13px;">
+                                <div class="cart_btn bangali bold text-white">Buy Now <i class="fa fa-cart-shopping cart_icon"></i></div>
+                            </a>
+                        </div>
                     </div>
                 @endforeach
             </div>
@@ -205,7 +202,7 @@
                     <div class="text-left">
                         <div class="title ms-3"><h3>Top Selling Products</h3></div>
                     </div>
-                    <div class="right pe-lg-5 pe-3 gap-2 see_more">
+                    <div class="right pe-3 gap-2 see_more">
                         <a href="{{ route('shop') }}" class="text-white ">See All</a>
                     </div>
                 </div>
@@ -263,15 +260,12 @@
                                         @endif
                                     @endif
                                 </div>
-
-                                {{-- <div class="d-flex justify-content-between">
-                                    <a class="submit_button btn btn-successs d-block cart_button"
-                                        href="{{route('product.details', $product->slug)}}" style="width: 100%;font-size: 13px;">
-                                        <div class="cart_btn bangali bold">Buy Now</div>
-                                        <div><i class="fa fa-cart-shopping cart_icon"></i></div>
-                                    </a>
-                                </div> --}}
-
+                            </div>
+                            <div class="">
+                                <a class="submit_button btn btn-successs d-block cart_button"
+                                    href="{{route('product.details', $product->slug)}}" style="width: 100%;font-size: 13px;">
+                                    <div class="cart_btn bangali bold text-white">Buy Now <i class="fa fa-cart-shopping cart_icon"></i></div>
+                                </a>
                             </div>
                         </div>
                     @endforeach
@@ -289,14 +283,14 @@
                         <div class="text-left">
                             <div class="title ms-3"><h3>{{ $category->name }}</h3></div>
                         </div>
-                        <div class="right pe-lg-5 pe-3 gap-2 see_more">
+                        <div class="right pe-3 gap-2 see_more">
                             <a href="{{ route('category.show', $category->id) }}" class="text-white ">See All</a>
                         </div>
                     </div>
 
                     <div class=" mt-3 bannerautoplay row home_product_shadwo py-3">
                         @foreach ($categoryProducts as $product)
-                            <div class="mx-2 pb-3 product col-lg-3 col-6 product_radias home_product_shadwo py-2">
+                            <div class="mx-2 pb-3 product col-lg-3 col-6 product_radias text-center home_product_shadwo py-2">
                                 <div class="image">
                                     <a href="{{ route('product.details', $product->slug) }}">
                                         @if ($product->inventorie_id != null && $product->rel_to_inventorie)
@@ -310,7 +304,7 @@
                                 </div>
                                 <div class="mt-3">
                                     <a href="{{ route('product.details', $product->slug) }}">
-                                        <div class="title">{{ Str::limit($product->name, 25) }}</div>
+                                        <div class="title">{{ Str::limit($product->name, 25 , '') }}</div>
                                     </a>
                                     <div class="price">
                                         @if ($product->inventorie_id != null && $product->rel_to_inventorie)
@@ -331,6 +325,12 @@
                                             @endif
                                         @endif
                                     </div>
+                                </div>
+                                <div class="">
+                                    <a class="submit_button btn btn-successs d-block cart_button"
+                                        href="{{route('product.details', $product->slug)}}" style="width: 100%;font-size: 13px;">
+                                        <div class="cart_btn bangali bold text-white">Buy Now <i class="fa fa-cart-shopping cart_icon"></i></div>
+                                    </a>
                                 </div>
                             </div>
                         @endforeach

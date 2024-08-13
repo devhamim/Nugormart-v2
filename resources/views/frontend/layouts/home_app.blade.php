@@ -133,7 +133,7 @@
             position: relative;
             width: 100%;
             overflow: hidden;
-            box-shadow: 0px 0px 7px 0px gray;
+            /* box-shadow: 0px 0px 7px 0px gray; */
         }     
 
         .nav_images [data-bs-target] {
@@ -219,12 +219,12 @@
             display: block;
         }
 
-        .category_products .slick-slide {
+        /* .category_products .slick-slide {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-        }
+        } */
 
         .category_radias img {
             display: block;
