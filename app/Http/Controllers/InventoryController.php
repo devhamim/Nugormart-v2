@@ -159,7 +159,6 @@ class InventoryController extends Controller
                 'weight' => $request->weight[$key] ?? null,
                 'color_id' => $request->color_id[$key] ?? null,
                 'size_id' => $request->size_id[$key] ?? null,
-                'image' => $inventoryDetail->image ?? 'default_image.jpg',
             ]
         );
     
