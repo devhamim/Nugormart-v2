@@ -53,7 +53,10 @@ Route::post('/clear-cart/{itemId}', [CartController::class, 'clear_cart']);
 
 Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
 Route::post('/order/store', [CheckoutController::class, 'order_store'])->name('order.store');
+// paymentmethod
 Route::get('/order/success', [CheckoutController::class, 'order_success'])->name('order.success');
+Route::get('/service/order/cancel', [CheckoutController::class, 'service_order_cancel'])->name('service.order.cancel');
+Route::get('/service/order/ipn', [CheckoutController::class, 'service_order_ipn'])->name('service.order.ipn');
 
 Route::get('/getProductSizes', [FrontendController::class, 'getProductSizes'] )->name('getProductSizes');
 
@@ -71,6 +74,7 @@ Route::post('/multi/order/status', [PrintController::class, 'multi_order_status'
 // landing page
 Route::get('/mabroom/moriom', [landingpageController::class, 'anayatourstravels'])->name('anayatourstravels');
 Route::post('/landing/order/store', [landingpageController::class, 'landing_order_store'])->name('landing.order.store');
+
 
 // login
 Route::group(['prefix' => 'admin'], function(){

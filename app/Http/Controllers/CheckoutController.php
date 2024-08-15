@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Cookie;
 use Str;
 use Log;
 use Illuminate\Support\Facades\Http;
+use UddoktaPay\LaravelSDK\UddoktaPay;
 
 class CheckoutController extends Controller
 {
@@ -58,11 +59,12 @@ class CheckoutController extends Controller
                 'created_at' => Carbon::now(),
             ]);
 
+            $total = $request->sub_total+$request->delivery_charge;
             Order::insert([
                 'order_id' => $order_id,
                 'delivery_charge' => $request->delivery_charge,
                 'sub_total' => $request->sub_total,
-                'total' => $request->sub_total+$request->delivery_charge,
+                'total' => $total,
                 'created_at' => Carbon::now(),
             ]);
             $quantities = $request->quantity;
@@ -110,6 +112,43 @@ class CheckoutController extends Controller
 
             }
 
+            if($request->paying_method == 'bkash'){
+                $request->session()->put('order_id', $order_id);
+
+                $apiKey = "c3684b1473dc5b5ab83ec6c9786a4367881b2cae";
+                $apiBaseURL = "https://pay.nugortechit.com/api/checkout-v2";
+                $uddoktaPay = new UddoktaPay($apiKey, $apiBaseURL);
+
+
+                // local
+                $apiKey = "982d381360a69d419689740d9f2e26ce36fb7a50"; // API KEY
+                $apiBaseURL = "https://sandbox.uddoktapay.com/api/checkout-v2"; // API URL
+                $uddoktaPay = new UddoktaPay($apiKey, $apiBaseURL);
+
+                $requestData = [
+                    'full_name'     => $request->name,
+                    'email'         => "test@test.com",
+                    'amount'        => $total,
+                    'metadata'      => [
+                        'example_metadata_key' => "example_metadata_value",
+                    ],
+                    'redirect_url'  => route('order.success'),
+                    'return_type'   => 'GET',
+                    'cancel_url'    => route('service.order.cancel'),
+                    'webhook_url'   => route('service.order.ipn'),
+                ];
+
+                try {
+                    // Initiate payment
+                    $paymentUrl = $uddoktaPay->initPayment($requestData);
+                    Cookie::queue(Cookie::forget('shopping_cart'));
+                    return redirect($paymentUrl);
+
+                } catch (\Exception $e) {
+                    return back()->with('error', "Initialization Error: " . $e->getMessage());
+                }
+            }
+
             Cookie::queue(Cookie::forget('shopping_cart'));
 
             // return redirect()->route('order.success')->withSuccess("Order has been placed successfully");
@@ -119,7 +158,22 @@ class CheckoutController extends Controller
 
 
     // order_success
-    function order_success(){
+    function order_success(Request $request){
+        $order_id = $request->session()->get('order_id');
+        $order_list = Order::findOrFail($order_id);
+        $order_list->update(['status' => 2]);
         return view('frontend.order_success');
+    }
+
+    // service_order_cancel\
+    function service_order_cancel(Request $request){
+        // $service_cart_id = $request->session()->get('service_cart_id');
+        // $service_cart = serviceOrderCart::findOrFail($service_cart_id);
+        // $service_cart->update(['status' => 0]);
+        return redirect('/');
+    }
+    // service_order_ipn\
+    function service_order_ipn(){
+        return redirect('/');
     }
 }
