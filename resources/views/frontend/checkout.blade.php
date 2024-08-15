@@ -309,13 +309,13 @@
                                                     Cash On Delivery
                                                 </label>
                                             </div>
-                                            <div class="form-check">
+                                            {{-- <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="paying_method"
                                                     id="bkash" value="bkash">
                                                 <label class="form-check-label" for="bkash">
                                                     Online Payment
                                                 </label>
-                                            </div>
+                                            </div> --}}
 
                                         </div>
 
