@@ -119,12 +119,6 @@ class CheckoutController extends Controller
                 $apiBaseURL = "https://pay.nugortechit.com/api/checkout-v2";
                 $uddoktaPay = new UddoktaPay($apiKey, $apiBaseURL);
 
-
-                // local
-                $apiKey = "982d381360a69d419689740d9f2e26ce36fb7a50"; // API KEY
-                $apiBaseURL = "https://sandbox.uddoktapay.com/api/checkout-v2"; // API URL
-                $uddoktaPay = new UddoktaPay($apiKey, $apiBaseURL);
-
                 $requestData = [
                     'full_name'     => $request->name,
                     'email'         => "test@test.com",
